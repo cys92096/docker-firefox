@@ -1,0 +1,12 @@
+#!/bin/sh
+
+PROFILE_DIR=/config/profile
+
+mkdir -p "$PROFILE_DIR"
+
+cat > "$PROFILE_DIR/user.js" <<EOF
+user_pref("intl.accept_languages", "zh-cn,zh");
+user_pref("intl.locale.requested", "zh-CN");
+EOF
+
+chmod 644 "$PROFILE_DIR/user.js"
