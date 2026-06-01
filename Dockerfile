@@ -1,9 +1,3 @@
-#
-# firefox Dockerfile
-#
-# https://github.com/jlesage/docker-firefox
-#
-
 # Build the membarrier check tool.
 FROM alpine:3.14 AS membarrier
 WORKDIR /tmp
