@@ -1,8 +1,11 @@
 name: Build Docker Image
 
-于:
+env:
+  IMAGE_NAME: ff-zh
+
+on:
   push:
-    分支: [main, master]
+    branches: [main, master]
   workflow_dispatch:
 
 jobs:
@@ -31,6 +34,6 @@ jobs:
           context: .
           push: true
           platforms: linux/amd64,linux/arm64
-          标签: |
-            ghcr.io/${{ github.repository_owner }}/ff-zh:latest
-            ghcr.io/${{ github.repository_owner }}/ff-zh:${{ github.run_number }}
+          tags: |
+            ghcr.io/${{ github.repository_owner }}/${{ env.IMAGE_NAME }}:latest
+            ghcr.io/${{ github.repository_owner }}/${{ env.IMAGE_NAME }}:${{ github.run_number }}
